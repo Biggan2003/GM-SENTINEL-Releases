@@ -1,0 +1,84 @@
+name: 🐞 Bug report
+description: Something in GM Sentinel is wrong, crashes or shows a strange value.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing GM Sentinel! Please fill in what you can — short answers are fine.
+        **Issues are public:** do not post passwords, personal files or anything private.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Describe the problem in a few sentences.
+      placeholder: |
+        e.g. "Storage page stays on 'Scanning…' for drive D: and never finishes."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What did you click, in which order?
+      placeholder: |
+        1. Open Storage
+        2. Select drive D:
+        3. Click Scan
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect instead?
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: GM Sentinel version
+      description: Settings → bottom → "About GM Sentinel" shows it (e.g. 1.0.0).
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: windows
+    attributes:
+      label: Windows version
+      options:
+        - Windows 11
+        - Windows 10
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: pc
+    attributes:
+      label: PC (optional)
+      description: Laptop / desktop model, CPU or GPU if it relates to the problem.
+      placeholder: "e.g. HP Victus 15, Ryzen 7, RTX 4050"
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does it happen?
+      options:
+        - Every time
+        - Sometimes
+        - Only once
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag and drop images here — a screenshot helps the most.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log (optional)
+      description: |
+        Press Win + R, paste `%APPDATA%\com.gmbiggan.sentinel\logs` and press Enter.
+        Open the newest `sentinel.log…` file and paste the last lines here.
+        The log can contain folder names — remove anything you do not want to share.
+      render: text
